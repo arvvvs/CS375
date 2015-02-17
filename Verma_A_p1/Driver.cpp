@@ -33,6 +33,7 @@ int main(int argc, char *argv[]){
 	Hello.helloworld();
 	Hello.buildMarketMap();
 	Hello.buildPricesMap();
+	Hello.computeMaxProfit();
 	return 0;
 
 }

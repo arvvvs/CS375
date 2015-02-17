@@ -15,7 +15,7 @@ Program1::Program1(string mfile, string pfile){
 		cerr<<"error in opening files"<<endl;
 	}	    
 }
-~Program1::Program1(){
+Program1::~Program1(){
 }
 void Program1::buildMarketMap(){
 	string name;
@@ -36,10 +36,10 @@ void Program1::buildMarketMap(){
 }
 int Program1::buildPricesMap(){
 	string name;
-	int weight=0;
+	weight=0;
 	int problemSize=0;
+	totalCost=0;
 	int price=0;
-	int totalCost=0;
 	problemNumber++;
 	string line;
 	getline(iiFile, line);
@@ -65,7 +65,17 @@ int Program1::buildPricesMap(){
 }
 void Program1::computeMaxProfit(){
 	int maxProfit=0;
-
+	int profit=0;
+	if(totalCost<=weight){
+		//calculate total profit
+		map<string, int>::const_iterator
+			map_it = gPrices.begin();
+		while(map_it != gPrices.end()){
+			profit+= mPrices[map_it->first];
+			++map_it;
+		}
+		maxProfit=profit;
+	}
 }
 void Program1::helloworld(){
 	cout<<"hello world"<<endl;

@@ -10,9 +10,14 @@ class Program1 {
 		ifstream iFile;
 		ifstream iiFile;
 		ofstream oFile;
+		//which problem number is being used from grandma file
 		int problemNumber=0;
 		//prices grandma sells at
 		map<string, int> gPrices;
+		//total cost of all things in map of grandma prices
+		int totalCost=0;
+		//total amount of money allowed to spend
+		int weight=0;	
 		//prices of market
 		map<string, int> mPrices;
 	public: 
