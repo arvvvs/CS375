@@ -2,6 +2,8 @@
 #include<map>
 #include<iostream>
 #include<string>
+#include<list>
+#include<vector>
 #include<stdexcept>
 #include<fstream>
 #include<cctype>
@@ -45,6 +47,7 @@ int Program1::buildPricesMap(){
 	getline(iiFile, line);
 	stringstream ss(line);
 	ss >> problemSize >> weight;
+	size=problemSize;
 	cout<<problemSize<<endl;
 	cout<<weight<<endl;
 	for(int i=0; i<problemSize; i++){
@@ -63,6 +66,48 @@ int Program1::buildPricesMap(){
 	}
 	return 0;
 }
+void Program1::buildProfitMap(){
+	map<string, int>::const_iterator
+		map_it = gPrices.begin();
+	while(map_it != gPrices.end()){
+		profitPrices[map_it->first]=mPrices[map_it->first]-gPrices[map_it->first];	
+		//cout<<map_it->first<<endl;
+		//cout<<profitPrices[map_it->first]<<endl;
+		++map_it;
+	}
+}
+int Program1::generateSubsetTemplate(){
+	vector<int>compare;
+	for(int i=0; i<size; i++){
+		compare.push_back(0);
+	}
+	if(compare==foo){
+		cout<<"it works"<<endl;
+	}
+
+	vector<int>::const_iterator ii;
+	if(compare!=foo){
+	for(unsigned i=0; i<foo.size(); i++){
+		if(foo.at(i)==0){
+			foo.at(i)=1;
+			return -1;
+		}
+		else if(foo.at(i)==1){
+			foo.at(i)=0;
+		}
+	}
+	}
+		
+
+	return 0;
+	
+}
+void Program1::resetArray(){
+	for(int i=0; i<size; i++){
+		foo.push_back(0);
+	}
+
+}
 void Program1::computeMaxProfit(){
 	int maxProfit=0;
 	int profit=0;
@@ -76,6 +121,7 @@ void Program1::computeMaxProfit(){
 		}
 		maxProfit=profit;
 	}
+	
 }
 void Program1::helloworld(){
 	cout<<"hello world"<<endl;

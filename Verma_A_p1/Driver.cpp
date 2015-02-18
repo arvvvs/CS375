@@ -34,6 +34,10 @@ int main(int argc, char *argv[]){
 	Hello.buildMarketMap();
 	Hello.buildPricesMap();
 	Hello.computeMaxProfit();
+	Hello.buildProfitMap();
+	Hello.resetArray();
+	Hello.generateSubsetTemplate();
+
 	return 0;
 
 }

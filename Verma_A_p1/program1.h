@@ -1,8 +1,9 @@
 #include<iostream>
+#include<vector>
+#include<list>
 #include<string>
 #include<cctype>
 #include<fstream>
-#include<iostream>
 #include<map>
 using namespace std;
 class Program1 {
@@ -20,12 +21,20 @@ class Program1 {
 		int weight=0;	
 		//prices of market
 		map<string, int> mPrices;
+		//profit per card (marketprices-grandmaprices)
+		map<string, int> profitPrices;
+		int size=0;
+		vector<int> foo;
+
 	public: 
 	Program1(string mfile, string pfile);
 	~Program1();
 	void helloworld();
 	int buildPricesMap();
+	void resetArray();
 	void buildMarketMap();
 	void computeMaxProfit();
+	void buildProfitMap();
+	int generateSubsetTemplate();
 	
 };
