@@ -23,8 +23,14 @@ class Program1 {
 		map<string, int> mPrices;
 		//profit per card (marketprices-grandmaprices)
 		map<string, int> profitPrices;
+		int subsetCost=0;
 		int size=0;
 		vector<int> foo;
+		vector<string> namesSubset;
+		vector<int> profitSubset;
+		int wSize=0;
+		int maxProfit=0;
+		vector<string> winningSubset;
 
 	public: 
 	Program1(string mfile, string pfile);
@@ -35,6 +41,9 @@ class Program1 {
 	void buildMarketMap();
 	void computeMaxProfit();
 	void buildProfitMap();
+	void generateSubset();
 	int generateSubsetTemplate();
+	void run();
+	int check();
 	
 };

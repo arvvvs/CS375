@@ -27,17 +27,16 @@ int main(int argc, char *argv[]){
 	else{
 		mFile=argv[2];
 		pFile=argv[4];
-		cout<<mFile<<" "<<oFile<<endl;
+//		cout<<mFile<<" "<<oFile<<endl;
 	}
 	Program1 Hello(mFile, pFile);
-	Hello.helloworld();
+	/*Hello.helloworld();
 	Hello.buildMarketMap();
 	Hello.buildPricesMap();
-	Hello.computeMaxProfit();
 	Hello.buildProfitMap();
 	Hello.resetArray();
-	Hello.generateSubsetTemplate();
-
+	Hello.computeMaxProfit();
+	*/
+	Hello.run();
 	return 0;
-
 }
