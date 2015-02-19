@@ -9,5 +9,5 @@ Driver.o: Driver.cpp
 program1.o: program1.cpp program1.h
 	$(CC) $(CFLAGS) -c program1.cpp -o program1.o
 clean:
-	rm *.o program1 *~
+	rm *.o program1 *~ 
 
